@@ -1,3 +1,30 @@
-<h1>New</h1>
+<h2>Create Posting</h2>
 
-{{message}}
+<form ng-submit="addJob()" name="newJob">
+  <table>
+    <tr>
+      <td><label for="jobTitle">Job Title: </label></td>
+      <td><input size="52" type="text" name="jobTitle" ng-model="job.jobTitle" /></td>
+    </tr>
+
+    <tr>
+      <td><label for="jobCompany">Company Name: </label></td>
+      <td><input size="52" type="text" name="jobCompany" ng-model="job.jobCompany" /></td>
+    </tr>
+
+    <tr>
+      <td><label for="jobDescription">Job Description: </label></td>
+      <td><textarea rows="4" cols="50" name="jobDescription" ng-model="job.jobDescription"></textarea></td>
+    </tr>
+
+    <tr>
+      <td><label for="jobResponsibilities">Responsibilities: </label></td>
+      <td><textarea rows="4" cols="50" name="jobResponsibilities" ng-model="job.jobResponsibilities"></textarea></td>
+    </tr>
+
+    <tr>
+      <td>&nbsp;</td>
+      <td><input type="submit" value="Create Posting"/> <a ng-href="/#/">Cancel</a></td>
+    </tr>
+</table>
+</form>
