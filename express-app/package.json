@@ -1,0 +1,25 @@
+{
+  "name": "jobsly-express-app",
+  "version": "1.0.0",
+  "description": "Galvanize assessment",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:tdkehoe/jobsly.git"
+  },
+  "author": "Thomas David Kehoe",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tdkehoe/jobsly/issues"
+  },
+  "homepage": "https://github.com/tdkehoe/jobsly",
+  "dependencies": {
+    "body-parser": "^1.13.3",
+    "cors": "^2.7.1",
+    "express": "^4.13.3",
+    "monk": "^1.0.1"
+  }
+}
