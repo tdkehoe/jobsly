@@ -13,6 +13,10 @@ app.config(function($routeProvider) {
     templateUrl: 'javascript/templates/edit.html',
     controller: 'EditController'
   })
+  .when('/:id/apply', { // APPLY
+    templateUrl: 'javascript/templates/apply.html',
+    controller: 'ApplyController'
+  })
   .when('/:id', { // SHOW
     templateUrl: 'javascript/templates/show.html',
     controller: 'ShowController'

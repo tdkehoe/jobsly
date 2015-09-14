@@ -6,6 +6,7 @@ app.controller('NewController', ['$scope', '$http', '$location', function($scope
       jobCompany: $scope.job.jobCompany,
       jobDescription: $scope.job.jobDescription,
       jobResponsibilities: $scope.job.jobResponsibilities,
+      jobPictureURL: $scope.job.jobPictureURL,
       jobCreated: Date.now(),
       jobFilled: false
     }

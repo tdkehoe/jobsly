@@ -1,5 +1,17 @@
+<table>
+  <tr>
+    <td width=320><h2>Current Open Postings</h2></td>
+    <td width=320><a href="/#/new"><button style="float: right">Post a new job</button></a></td>
+  </tr>
+</table>
 <div ng-repeat="job in jobs">
-  <span>{{job.jobTitle}}</span>
-  <span>{{job.jobCompany}}</span>
-  <br />
+  <div class="jobBox">
+    <span>{{job.jobTitle}}</span> -
+    <span>{{job.jobCompany}}</span> -
+    <span>posted {{job.jobCreated | date:'yyyy-MM-dd'}}</span>
+    <br />
+    <span>{{job.jobDescription}}</span>
+    <br />
+    <a href="/#/{{job._id}}"><button>View Job</button></a>
+  </div>
 </div>

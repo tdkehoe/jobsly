@@ -1,3 +1,32 @@
-<h1>Show</h1>
 
-{{message}}
+<a href="/#/">Back to all postings</a>
+
+<table>
+  <tr>
+    <td>{{job.jobTitle}}</td>
+    <td>{{job.jobCompany}}</td>
+    <td><a ng-href="/#/{{job._id}/edit}"><button>View Job</button></a></td>
+  </tr>
+  <tr>
+    <td colspan=3>Posted {{job.jobCreated | date:'yyyy-MM-dd'}}</td>
+  </tr>
+  <tr>
+    <td colspan=3>{{job.jobDescription}}</td>
+  </tr>
+  <tr>
+    <td colspan=3>Responsibilities</td>
+  </tr>
+  <tr>
+    <td colspan=3>{{job.jobResponsibilities}}</td>
+  </tr>
+  <tr>
+    <td colspan=3><img class="jobPicture" ng-src="{{job.jobPictureURL}}"></td>
+  </tr>
+  <tr>
+    <td><button>Apply for Job</button></td>
+    <td colspan=2>This posting is still open.</td>
+  </tr>
+
+</table>
+
+<h2>Current Applicants</h2>

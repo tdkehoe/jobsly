@@ -1,3 +1,47 @@
-<h1>Edit</h1>
+<h2>Edit Posting</h2>
 
-{{message}}
+<form ng-submit="updateJob()" name="editJob">
+  <table>
+    <tr>
+      <td class="textAlignRight"><label for="jobTitle">Job Title </label></td>
+      <td><input size="52" type="text" name="jobTitle" ng-model="job.jobTitle" /></td>
+    </tr>
+
+    <tr>
+      <td class="textAlignRight"><label for="jobCompany">Company Name </label></td>
+      <td><input size="52" type="text" name="jobCompany" ng-model="job.jobCompany" /></td>
+    </tr>
+
+    <tr>
+      <td class="textAlignRight"><label for="jobDescription">Job Description </label></td>
+      <td><textarea rows="4" cols="50" name="jobDescription" ng-model="job.jobDescription"></textarea></td>
+    </tr>
+
+    <tr>
+      <td class="textAlignRight"><label for="jobResponsibilities">Responsibilities </label></td>
+      <td><textarea rows="4" cols="50" name="jobResponsibilities" ng-model="job.jobResponsibilities"></textarea></td>
+    </tr>
+
+    <tr>
+      <td class="textAlignRight"><label for="jobPictureURL">Job Picture URL </label></td>
+      <td><textarea rows="4" cols="50" name="jobPictureURL" ng-model="job.jobPictureURL"></textarea></td>
+    </tr>
+
+    <tr>
+      <td class="textAlignRight"><label for="thePostingIs">The posting is... </label></td>
+      <td>
+        <input type="radio" name="jobFilled" value="false" checked/>Open</input>
+        <input type="radio" name="jobFilled" value="true"/>Filled</input>
+      </td>
+    </tr>
+
+    <tr>
+      <td>&nbsp;</td>
+      <td>
+        <input type="submit" value="Save Posting"/>
+        <a ng-href="/#/">Cancel</a>
+        <a ng-href="/#/" ng-click="deleteJob(job)">Delete Posting</a>
+      </td>
+    </tr>
+</table>
+</form>
