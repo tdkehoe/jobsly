@@ -1,3 +1,30 @@
+body {
+  font-family: Source Sans Pro, sans-serif;
+}
+
+h1 {
+  font-family: Nixie One, sans-serif;
+  text-shadow: 4px 4px 4px #aaa
+}
+
+h2 {
+  font-family: Nixie One, sans-serif;
+}
+
+button {
+  border-radius: 10px;
+  color: black;
+  font-size: 16px;
+  padding: 5px 10px 5px 10px;
+  text-decoration: none;
+}
+
+button:hover {
+  background: #3cb0fd;
+  text-decoration: none;
+}
+
+
 .jobBox {
   border: 1px solid #d3d3d3;
   border-radius: 5px;

@@ -29,4 +29,15 @@ app.controller('ShowController', ['$scope', '$http', '$routeParams', '$location'
     });
   };
 
+  $scope.deleteJobApplication = function(job, application) {
+    console.log("Deleting job application.");
+    var index = job.applications.indexOf(application);
+    job.applications.splice(index, 1);
+    $http.put('http://localhost:8080/api/jobsly/' + job._id, job).then(function(response) { // UPDATE
+      console.log("Job application added.");
+    }, function(response) {
+      console.log("Invalid URL");
+    });
+  }
+
 }]);

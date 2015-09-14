@@ -4,17 +4,20 @@
   <table>
     <tr>
       <td><label for="jobTitle">Job Title: </label></td>
-      <td><input size="52" type="text" name="jobTitle" ng-model="job.jobTitle" /></td>
+      <td><input size="52" type="text" name="jobTitle" ng-model="job.jobTitle" required/></td>
+      <span ng-show="newJob.text.$error.required">Job title is required.</span>
     </tr>
 
     <tr>
       <td><label for="jobCompany">Company Name: </label></td>
-      <td><input size="52" type="text" name="jobCompany" ng-model="job.jobCompany" /></td>
+      <td><input size="52" type="text" name="jobCompany" ng-model="job.jobCompany" required/></td>
+      <span ng-show="newJob.text.$error.required">Company is required.</span>
     </tr>
 
     <tr>
       <td><label for="jobDescription">Job Description: </label></td>
-      <td><textarea rows="4" cols="50" name="jobDescription" ng-model="job.jobDescription"></textarea></td>
+      <td><textarea rows="4" cols="50"name="jobDescription" ng-model="job.jobDescription" required></textarea></td>
+      <span ng-show="newJob.text.$error.required">Job description is required.</span>
     </tr>
 
     <tr>
@@ -24,7 +27,7 @@
 
     <tr>
       <td><label for="jobPictureURL">Job Picture URL: </label></td>
-      <td><textarea rows="4" cols="50" name="jobPictureURL" ng-model="job.jobPictureURL"></textarea></td>
+      <td><input size="52" type="url" name="jobPictureURL" ng-model="job.jobPictureURL" /></td>
     </tr>
 
     <tr>
