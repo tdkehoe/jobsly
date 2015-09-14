@@ -23,10 +23,39 @@
     <td colspan=3><img class="jobPicture" ng-src="{{job.jobPictureURL}}"></td>
   </tr>
   <tr>
-    <td><button>Apply for Job</button></td>
+    <td><button ng-click="showApplication = !showApplication">Apply for Job</button></td>
     <td colspan=2>This posting is still open.</td>
   </tr>
-
 </table>
+
+<div ng-show="showApplication">
+
+  <h2>Apply for {{job.jobTitle}} at {{job.jobCompany}}</h2>
+
+  <form ng-submit="addJobApplication(job)" name="newJobApplication">
+    <table>
+      <tr>
+        <td><label for="applicantName">Full Name: </label></td>
+        <td><input size="52" type="text" name="applicantName" ng-model="job.application.applicantName" /></td>
+      </tr>
+
+      <tr>
+        <td><label for="applicantEmail">Email Address: </label></td>
+        <td><input size="52" type="text" name="applicantEmail" ng-model="job.application.applicantEmail" /></td>
+      </tr>
+
+      <tr>
+        <td><label for="resumeURL">Resume URL: </label></td>
+        <td><input size="52" name="resumeURL" ng-model="job.application.resumeURL"></textarea></td>
+      </tr>
+
+      <tr>
+        <td>&nbsp;</td>
+        <td><input type="submit" value="Create Application">Create Application</input> <a ng-href="/#/">Cancel</a></td>
+      </tr>
+    </table>
+  </form>
+
+</div>
 
 <h2>Current Applicants</h2>
