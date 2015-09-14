@@ -30,16 +30,16 @@
     <tr>
       <td class="textAlignRight"><label for="thePostingIs">The posting is... </label></td>
       <td>
-        <input type="radio" name="jobFilled" value="false" checked/>Open</input>
-        <input type="radio" name="jobFilled" value="true"/>Filled</input>
+        <input type="radio" name="jobFilled" value="false" ng-model="job.jobFilled" checked />Open</input>
+        <input type="radio" name="jobFilled" value="true" ng-model="job.jobFilled" />Filled</input>
       </td>
     </tr>
 
     <tr>
       <td>&nbsp;</td>
       <td>
-        <input type="submit" value="Save Posting"/>
-        <a ng-href="/#/">Cancel</a>
+        <input type="submit" value="Save Posting"/>&nbsp;&nbsp;&nbsp;
+        <a ng-href="/#/">Cancel</a>&nbsp;&nbsp;&nbsp;
         <a ng-href="/#/" ng-click="deleteJob(job)">Delete Posting</a>
       </td>
     </tr>

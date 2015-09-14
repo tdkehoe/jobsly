@@ -29,9 +29,12 @@ app.controller('ShowController', ['$scope', '$http', '$routeParams', '$location'
     });
   };
 
-  $scope.deleteJobApplication = function(job, application) {
+  $scope.deleteJobApplication = function(job, applicant) {
+    console.log(job);
+    console.log(applicant);
     console.log("Deleting job application.");
-    var index = job.applications.indexOf(application);
+    var index = job.applications.indexOf(applicant);
+    console.log(index);
     job.applications.splice(index, 1);
     $http.put('http://localhost:8080/api/jobsly/' + job._id, job).then(function(response) { // UPDATE
       console.log("Job application added.");

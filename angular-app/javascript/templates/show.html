@@ -5,28 +5,32 @@
   <tr>
     <td><h2>{{job.jobTitle}}</h2></td>
     <td><h2> - {{job.jobCompany}}</h2></td>
-    <td><a ng-href="/#/{{job._id}/edit}"><button>Edit Job Posting</button></a></td>
+    <td><a href="/#/{{job._id}}/edit"><button>Edit Job Posting</button></a></td>
   </tr>
+</table>
+
+<h3>Posted {{job.jobCreated | date:'yyyy-MM-dd'}}</h3>
+
+<p>
+  {{job.jobDescription}}
+</p>
+
+<h3>Responsibilities:</h3>
+
+<p>
+  {{job.jobResponsibilities}}
+</p>
+
+<div>
+  <img class="jobPicture" ng-src="{{job.jobPictureURL}}">
+</div>
+
+<table>
   <tr>
-    <td colspan=3><h3>Posted {{job.jobCreated | date:'yyyy-MM-dd'}}</h3></td>
-  </tr>
-  <tr>
-    <td colspan=3>{{job.jobDescription}}</td>
-  </tr>
-  <tr>
-    <td colspan=3><h3>Responsibilities:</h3></td>
-  </tr>
-  <tr>
-    <td colspan=3>{{job.jobResponsibilities}}</td>
-  </tr>
-  <tr>
-    <td colspan=3><img class="jobPicture" ng-src="{{job.jobPictureURL}}"></td>
-  </tr>
-  <tr>
-    <td><button ng-click="showApplication = !showApplication" ng-hide="{{job.job.Filled}}">Apply for Job</button></td>
-    <td colspan=2>
-      <h3 ng-hide="{{job.job.Filled}}">This posting is still open.</h3>
-      <h3 ng-show="{{job.job.Filled}}">This posting has been filled.</h3>
+    <td><button ng-click="showApplication = !showApplication" ng-hide="job.jobFilled">Apply for Job</button></td>
+    <td>
+      <h3 ng-hide="job.jobFilled">This posting is still open.</h3>
+      <h3 ng-show="job.jobFilled">This posting has been filled.</h3>
     </td>
   </tr>
 </table>
@@ -66,21 +70,36 @@
   </form>
 </div>
 
-<h3 ng-show="job.applications.length > 0">Current <span ng-show="job.applications.length > 0">
-  <ng-pluralize count="job.applications.length"
-    when="{'0': '',
-    'one': 'Applicant',
-    'other': 'Applicants',
-    'NaN': ''}">
-  </ng-pluralize><br>
-</span></h3>
+<div ng-hide="job.jobFilled">
+  <h3 ng-show="job.applications.length > 0">Current <span ng-show="job.applications.length > 0">
+    <ng-pluralize count="job.applications.length"
+      when="{'0': '',
+      'one': 'Applicant',
+      'other': 'Applicants',
+      'NaN': ''}">
+    </ng-pluralize><br>
+  </span></h3>
 
-<h3 ng-hide="job.applications.length > 0">There Are Currently No Applicants</h3>
-
-<div ng-repeat="applicant in job.applications">
-  <span>{{applicant.applicantName}}</span>
-  <span>{{applicant.applicantName}}</span>
-  <form ng-submit="deleteJobApplication(job, application)">
-    <input type="submit" value="Delete Application" />
-  </form>
+  <h3 ng-hide="job.applications.length > 0">There Are Currently No Applicants</h3>
 </div>
+<!-- <div ng-repeat="applicant in job.applications">
+   -->
+  <table class="applicantsTable" ng-show="job.applications.length > 0">
+    <tr>
+      <th class="applicantsCell">Name</th>
+      <th class="applicantsCell">Email</th>
+      <th class="applicantsCell">Link to Resume</th>
+      <th>&nbsp;</th>
+    </tr>
+    <tr ng-repeat="applicant in job.applications">
+      <td class="applicantsCell">{{applicant.applicantName}}</td>
+      <td class="applicantsCell">{{applicant.applicantEmail}}</td>
+      <td class="applicantsCell">{{applicant.resumeURL}}</td>
+      <td>
+        <form ng-submit="deleteJobApplication(job, applicant)">
+          <input type="submit" value="Delete Application" />
+        </form>
+      </td>
+    </tr>
+  </table>
+<!-- </div> -->

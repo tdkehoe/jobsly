@@ -1,17 +1,28 @@
 <table>
   <tr>
     <td width=320><h2>Current Open Postings</h2></td>
-    <td width=320><a href="/#/new"><button style="float: right">Post a new job</button></a></td>
+    <td width=320><a href="/#/new"><button style="float: right">Create New Job Posting</button></a></td>
   </tr>
 </table>
-<div ng-repeat="job in jobs">
+<div ng-repeat="job in jobs | orderBy: 'created_at':true" ng-hide="job.jobFilled">
   <div class="jobBox">
-    <span>{{job.jobTitle}}</span> -
-    <span>{{job.jobCompany}}</span> -
-    <span>posted {{job.jobCreated | date:'yyyy-MM-dd'}}</span>
-    <br />
-    <span>{{job.jobDescription}}</span>
-    <br />
+    <span class="jobTitle">{{job.jobTitle}}</span> -
+    <span class="jobCompany">{{job.jobCompany}}</span> -
+    <span class="jobDate">posted {{job.jobCreated | date:'yyyy-MM-dd HH:mm'}}</span>
+    <p>{{job.jobDescription}}</p>
     <a href="/#/{{job._id}}"><button>View Job</button></a>
+  </div>
+</div>
+
+<p ng-click="showFilledJobs = !showFilledJobs">Show filled jobs:</p>
+<div ng-show="showFilledJobs">
+  <div ng-repeat="job in jobs" ng-show="job.jobFilled">
+    <div class="jobBox">
+      <span class="jobTitle">{{job.jobTitle}}</span> -
+      <span class="jobCompany">{{job.jobCompany}}</span> -
+      <span class="jobDate">posted {{job.jobCreated | date:'yyyy-MM-dd'}}</span>
+      <p>{{job.jobDescription}}</p>
+      <a href="/#/{{job._id}}"><button>View Job</button></a>
+    </div>
   </div>
 </div>

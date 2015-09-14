@@ -12,10 +12,10 @@ h2 {
 }
 
 button {
-  border-radius: 10px;
+  border-radius: 5px;
   color: black;
   font-size: 16px;
-  padding: 5px 10px 5px 10px;
+  padding: 2px 5px 2px 5px;
   text-decoration: none;
 }
 
@@ -33,6 +33,38 @@ button:hover {
   padding: 10px
 }
 
+.jobTitle {
+  font-weight: bold;
+  font-size: 14pt;
+}
+
+.jobCompany {
+  font-weight: bold;
+  font-style: italic;
+  font-size: 14pt;
+}
+
+.jobDate {
+  font-weight: bold;
+  font-size: 14pt;
+}
+
 .textAlignRight {
   text-align: right;
+}
+
+.applicantsTable {
+  border: 1px solid black;
+}
+
+th {
+  background-color: gray;
+}
+
+.applicantsTable tr:nth-child(even) {
+  background-color: #d3d3d3;
+}
+
+.applicantsCell {
+  border-right: 1px solid black;
 }

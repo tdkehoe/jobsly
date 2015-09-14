@@ -14,7 +14,8 @@ app.controller('EditController', ['$scope', '$http', '$route', '$routeParams', '
       jobDescription: $scope.job.jobDescription,
       jobResponsibilities: $scope.job.jobResponsibilities,
       jobPictureURL: $scope.job.jobPictureURL,
-      jobFilled: false
+      jobFilled: $scope.job.jobFilled,
+      jobCreated: $scope.job.jobCreated
     }
 
     $http.put('http://localhost:8080/api/jobsly/' + $routeParams.id, job).then(function(response) { // UPDATE
