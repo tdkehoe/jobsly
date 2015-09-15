@@ -8,16 +8,18 @@ app.controller('EditController', ['$scope', '$http', '$route', '$routeParams', '
 
   $scope.updateJob = function(job) {
     console.log("Updating job.");
+    jobFilledBoolean = ($scope.job.jobFilled == 'true'); // radio buttons return strings, this converts strings to Booleans
+    console.log(jobFilledBoolean);
     var job = {
       jobTitle: $scope.job.jobTitle,
       jobCompany: $scope.job.jobCompany,
       jobDescription: $scope.job.jobDescription,
       jobResponsibilities: $scope.job.jobResponsibilities,
       jobPictureURL: $scope.job.jobPictureURL,
-      jobFilled: $scope.job.jobFilled,
+      jobFilled: jobFilledBoolean, // Boolean value
       jobCreated: $scope.job.jobCreated
     }
-
+    console.log(job);
     $http.put('http://localhost:8080/api/jobsly/' + $routeParams.id, job).then(function(response) { // UPDATE
       console.log("Job added.");
       $location.path( '/');

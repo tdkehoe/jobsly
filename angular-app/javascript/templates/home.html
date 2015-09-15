@@ -17,6 +17,7 @@
 <p ng-click="showFilledJobs = !showFilledJobs">Show filled jobs:</p>
 <div ng-show="showFilledJobs">
   <div ng-repeat="job in jobs" ng-show="job.jobFilled">
+  <!-- <div ng-repeat="job in jobs" ng-show="job.jobFilled"> -->
     <div class="jobBox">
       <span class="jobTitle">{{job.jobTitle}}</span> -
       <span class="jobCompany">{{job.jobCompany}}</span> -
