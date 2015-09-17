@@ -1,6 +1,6 @@
 app.controller('ShowController', ['$scope', '$http', '$routeParams', '$location', function($scope, $http, $routeParams, $location) {
   console.log("Show controller");
-  $http.get('http://localhost:8080/api/jobsly/' + $routeParams.id).then(function(response) { // SHOW
+  $http.get('http://localhost:8080/api/jobsly/jobsly/' + $routeParams.id).then(function(response) { // SHOW
     $scope.job = response.data;
   }, function(response) {
     console.log("Invalid URL");
@@ -22,7 +22,7 @@ app.controller('ShowController', ['$scope', '$http', '$routeParams', '$location'
     job.application.applicantEmail = null;
     job.application.resumeURL = null;
     job.applications = applications;
-    $http.put('http://localhost:8080/api/jobsly/' + job._id, job).then(function(response) { // UPDATE
+    $http.put('http://localhost:8080/api/jobsly/jobsly/' + job._id, job).then(function(response) { // UPDATE
       console.log("Job application added.");
     }, function(response) {
       console.log("Invalid URL");
@@ -36,7 +36,7 @@ app.controller('ShowController', ['$scope', '$http', '$routeParams', '$location'
     var index = job.applications.indexOf(applicant);
     console.log(index);
     job.applications.splice(index, 1);
-    $http.put('http://localhost:8080/api/jobsly/' + job._id, job).then(function(response) { // UPDATE
+    $http.put('http://localhost:8080/api/jobsly/jobsly/' + job._id, job).then(function(response) { // UPDATE
       console.log("Job application added.");
     }, function(response) {
       console.log("Invalid URL");

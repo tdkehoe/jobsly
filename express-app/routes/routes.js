@@ -3,7 +3,7 @@ var router = express.Router();
 var db = require('monk')('localhost/jobsly');
 var Jobsly = db.get('jobsly');
 
-router.get('/', function(req, res) { // INDEX
+router.get('/jobsly/', function(req, res) { // INDEX
   Jobsly.find({}, function(err, jobs) {
     if (err) {
       res.send(err);
@@ -12,7 +12,7 @@ router.get('/', function(req, res) { // INDEX
   })
 });
 
-router.post('/', function(req, res) { // CREATE
+router.post('/jobsly/', function(req, res) { // CREATE
   Jobsly.insert(req.body, function(err, job) {
     if (err) {
       res.send(err);
@@ -21,11 +21,12 @@ router.post('/', function(req, res) { // CREATE
   })
 });
 
-router.get('/new', function(req, res) { // NEW
-  // no database access needed
-});
+// router.get('/new', function(req, res) { // NEW
+//   // no database access needed
+// });
 
-router.get('/:id', function(req, res) { // SHOW
+// should be router.get('/jobsly/:id', function(req, res) {
+router.get('/jobsly/:id', function(req, res) { // SHOW
   Jobsly.findOne({_id: req.params.id}, function(err, job){
     if (err) {
       res.send(err);
@@ -34,16 +35,16 @@ router.get('/:id', function(req, res) { // SHOW
   })
 });
 
-router.get('/:id/edit', function(req, res) { // EDIT
-  Jobsly.findOne({_id: req.params.id}, function(err, job){
-    if (err) {
-      res.send(err);
-    }
-    res.status(200).json(job); // OK
-  })
-});
+// router.get('/:id/edit', function(req, res) { // EDIT - not needed, identical to the SHOW route
+//   Jobsly.findOne({_id: req.params.id}, function(err, job){
+//     if (err) {
+//       res.send(err);
+//     }
+//     res.status(200).json(job); // OK
+//   })
+// });
 
-router.put('/:id', function(req, res) { // UPDATE
+router.put('/jobsly/:id', function(req, res) { // UPDATE
   Jobsly.findAndModify({_id: req.params.id}, req.body, function(err, job){
     if (err) {
       throw err;
@@ -52,7 +53,7 @@ router.put('/:id', function(req, res) { // UPDATE
   })
 });
 
-router.delete('/:id', function(req, res) { // DESTROY
+router.delete('/jobsly/:id', function(req, res) { // DESTROY
   Jobsly.remove({_id: req.params.id}, function(err, job){
     if (err) {
       throw err;

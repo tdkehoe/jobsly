@@ -1,11 +1,11 @@
 
-<a href="/#/">Back to all postings</a>
+<a href="/#/jobsly/">Back to all postings</a>
 
 <table>
   <tr>
     <td><h2>{{job.jobTitle}}</h2></td>
     <td><h2> - {{job.jobCompany}}</h2></td>
-    <td><a href="/#/{{job._id}}/edit"><button>Edit Job Posting</button></a></td>
+    <td><a href="/#/jobsly/{{job._id}}/edit"><button>Edit Job Posting</button></a></td>
   </tr>
 </table>
 
@@ -51,7 +51,7 @@
         <td>
           <input size="52" type="email" name="applicantEmail" ng-model="job.application.applicantEmail" required/>
           <span ng-show="newJobApplication.email.$error.required">Email is required.</span>
-          <span ng-show="newJobApplication.email.$error.email">Invalid email address.</span>
+          <span ng-show="newJobApplication.email.$error.required">Invalid email address.</span>
         </td>
       </tr>
 
@@ -59,12 +59,12 @@
         <td><label for="resumeURL">Resume URL: </label></td>
         <td><input size="52" type="url" name="resumeURL" ng-model="job.application.resumeURL" required/></td>
         <span ng-show="newJobApplication.url.$error.required">Resume URL is required.</span>
-        <span ng-show="newJobApplication.url.$error.email">Invalid URL.</span>
+        <span ng-show="newJobApplication.url.$error.required">Invalid URL.</span>
       </tr>
 
       <tr>
         <td>&nbsp;</td>
-        <td><input type="submit" value="Create Application" /> <a ng-href="/#/">Cancel</a></td>
+        <td><input type="submit" value="Create Application" /> <a ng-href="/#/jobsly/">Cancel</a></td>
       </tr>
     </table>
   </form>

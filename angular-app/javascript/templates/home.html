@@ -1,7 +1,8 @@
 <table>
   <tr>
     <td width=320><h2>Current Open Postings</h2></td>
-    <td width=320><a href="/#/new"><button style="float: right">Create New Job Posting</button></a></td>
+    <!-- <td width=320><a href="/#/new"><button style="float: right">Create New Job Posting</button></a></td> -->
+    <td width=320><a href="/#/jobsly/new"><button style="float: right">Create New Job Posting</button></a></td>
   </tr>
 </table>
 <div ng-repeat="job in jobs | orderBy: 'created_at':true" ng-hide="job.jobFilled">
@@ -10,7 +11,7 @@
     <span class="jobCompany">{{job.jobCompany}}</span> -
     <span class="jobDate">posted {{job.jobCreated | date:'yyyy-MM-dd HH:mm'}}</span>
     <p>{{job.jobDescription}}</p>
-    <a href="/#/{{job._id}}"><button>View Job</button></a>
+    <a href="/#/jobsly/{{job._id}}"><button>View Job</button></a>
   </div>
 </div>
 
@@ -23,7 +24,7 @@
       <span class="jobCompany">{{job.jobCompany}}</span> -
       <span class="jobDate">posted {{job.jobCreated | date:'yyyy-MM-dd'}}</span>
       <p>{{job.jobDescription}}</p>
-      <a href="/#/{{job._id}}"><button>View Job</button></a>
+      <a href="/#/jobsly/{{job._id}}"><button>View Job</button></a>
     </div>
   </div>
 </div>

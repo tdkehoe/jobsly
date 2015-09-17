@@ -10,9 +10,9 @@ app.controller('NewController', ['$scope', '$http', '$location', function($scope
       jobCreated: Date.now(),
       jobFilled: false
     }
-    $http.post('http://localhost:8080/api/jobsly/', job).then(function(response) { // NEW
+    $http.post('http://localhost:8080/api/jobsly/jobsly/', job).then(function(response) { // NEW
       console.log("Job added.");
-      $location.path( '/');
+      $location.path( '/jobsly/');
     }, function(response) {
       console.log("Invalid URL");
     });
