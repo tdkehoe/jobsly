@@ -1,0 +1,6 @@
+{
+  "name": "jobsly",
+  "root": "./",
+  "clean_urls": false,
+  "error_page": "error.html"
+}
