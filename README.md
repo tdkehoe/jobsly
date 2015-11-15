@@ -1,6 +1,6 @@
 # jobsly
 
-Our final exam was to build this CRUD app in 7.5 hours. Only half of us passed on the first try; the rest had to retake the exam.
+Our final exam was to build this CRUD app in 7.5 hours. No cutting and pasting was allowed, we had to key in every character! Only half of us passed the exam on the first try; the other students had to retake the exam.
 
 The requirements were to use MongoDB, Node, and Express. I was the only student who passed who also used Angular. I built two separate apps, the Express back end runs on Heroku and the Angular front end runs on Divshot. The apps talk to each other via an API.
 
