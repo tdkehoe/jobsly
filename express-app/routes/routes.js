@@ -8,7 +8,7 @@ router.get('/jobsly/', function(req, res) { // INDEX
     if (err) {
       res.send(err);
     }
-    res.status(200).json(jobs); // OK
+    res.status(200).json(jobs); // Tested, OK
   })
 });
 
@@ -17,7 +17,7 @@ router.post('/jobsly/', function(req, res) { // CREATE
     if (err) {
       res.send(err);
     }
-    res.status(201).json(job) // Created
+    res.status(201).json(job) // Created, OK
   })
 });
 
@@ -25,13 +25,12 @@ router.post('/jobsly/', function(req, res) { // CREATE
 //   // no database access needed
 // });
 
-// should be router.get('/jobsly/:id', function(req, res) {
 router.get('/jobsly/:id', function(req, res) { // SHOW
   Jobsly.findOne({_id: req.params.id}, function(err, job){
     if (err) {
       res.send(err);
     }
-    res.status(200).json(job); // OK
+    res.status(200).json(job); // Tested, OK
   })
 });
 
@@ -40,7 +39,7 @@ router.get('/jobsly/:id', function(req, res) { // SHOW
 //     if (err) {
 //       res.send(err);
 //     }
-//     res.status(200).json(job); // OK
+//     res.status(200).json(job); // Tested, OK
 //   })
 // });
 
@@ -49,7 +48,7 @@ router.put('/jobsly/:id', function(req, res) { // UPDATE
     if (err) {
       throw err;
     }
-    res.json(req.body);
+    res.json(req.body); // Tested, OK
   })
 });
 
@@ -58,10 +57,8 @@ router.delete('/jobsly/:id', function(req, res) { // DESTROY
     if (err) {
       throw err;
     }
-    res.status(204).json(job); // No Content
+    res.status(204).json(job); // Tested, No Content
   })
 })
-
-
 
 module.exports = router;
