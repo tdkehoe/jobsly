@@ -26,5 +26,5 @@ mongod
 Then go into the directory jobsly/angular-app and run:
 http-server -c-1 -o
 
-Open your browswer to:
+Open your browser to:
 http://127.0.0.1:8081/#/jobsly/
