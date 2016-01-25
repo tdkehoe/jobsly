@@ -12,6 +12,7 @@ I had fun making this app and had time to do some extra styling and add some fun
 
 View the front end on Divshot:
 https://jobsly-angular.firebaseapp.com/#/jobsly/
+(Wait about thirty seconds for the data to arrive from Heroku.)
 
 The back end is on Heroku at:
 https://protected-plateau-2199.herokuapp.com/ https://git.heroku.com/protected-plateau-2199.git
