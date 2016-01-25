@@ -11,7 +11,7 @@ By using Angular I was able to include many nice features, especially hiding and
 I had fun making this app and had time to do some extra styling and add some fun jobs!
 
 View the front end on Divshot:
-http://development.jobsly-angular.divshot.io/#/jobsly/
+https://jobsly-angular.firebaseapp.com/#/jobsly/
 
 The back end is on Heroku at:
 https://protected-plateau-2199.herokuapp.com/ https://git.heroku.com/protected-plateau-2199.git
