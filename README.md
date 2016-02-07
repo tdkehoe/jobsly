@@ -10,7 +10,7 @@ By using Angular I was able to include many nice features, especially hiding and
 
 I had fun making this app and had time to do some extra styling and add some fun jobs!
 
-View the front end on Divshot:
+View the front end on Firebase:
 https://jobsly-angular.firebaseapp.com/#/jobsly/
 (Wait about thirty seconds for the data to arrive from Heroku.)
 
