@@ -22,6 +22,7 @@ GET http://localhost:8080/api/jobsly
 
 To run this app locally, go into the directory jobsly/express-app and run:
 nodemon
+
 mongod
 
 Then go into the directory jobsly/angular-app and run:
