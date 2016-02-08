@@ -17,6 +17,9 @@ https://jobsly-angular.firebaseapp.com/#/jobsly/
 The back end is on Heroku at:
 https://protected-plateau-2199.herokuapp.com/ https://git.heroku.com/protected-plateau-2199.git
 
+The deployed back end project (slightly different than the local version in this repository) is at:
+https://github.com/tdkehoe/jobsly-express-app
+
 I tested the back end with Postman, for example:
 GET http://localhost:8080/api/jobsly
 
